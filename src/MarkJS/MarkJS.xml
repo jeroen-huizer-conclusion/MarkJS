@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget id="MarkJS.widget.MarkJS" needsEntityContext="true" xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mendix.com/widget/1.0/ widget.xsd">
+    <name>MarkJS</name>
+    <description>A text highlighter</description>
+    <icon>iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAABJ0AAASdAHeZh94AAAAB3RJTUUH4AUICjojXZ08YAAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4xNkRpr/UAAA3GSURBVHhe7d3bc1XVAQZw/4uqlFuiMVwDhEACAgGSENJy0QByi8hFECQgEUXUopSqrTdmdLCOvejQdrTO9MW2jjN27Iud6VVJICEh5AJJ++BLa84lj6trxxw8WfmS7L3W2ufstfM9/F4+c87+zsynk33MWec2IQRRbMCQyFUwJHIVDIlcBUMiV8GQyFUwJHIVDIlcBUMiV8GQ3LJ4/YMio6xuj9i493HRdPa8eOvi7+Q/xo+JKxiSO+7dfODWmMdTt/u4eOTUj8XOw0+Kly+8Jx+Kn891MCR3oPGOpWTNNjG9pPKWwtJqUVa9VWw70CTOnX9bPh2+hktgSG544Y134XDHMnvF5hGDRgoWrREbG47Kp8fXjDoYUvQl+h8Tv3n/OXGg6UmxesshOGBVUXkdHDEyf+UmeRl87SiDIUVb6ka1GOwuHqHrn9Xi448eFucvPCkOnzolqrcfGTVo71cMNF5kRslqeSl8/SiDIUWbOuax9DWvEp/+cZ+48M4T4sSzJ8Wspf4H7VGv6wIYUrSh8U4kfe0ukfjyO+Lff5ki/vCrEnHmmUqxcVutmLOsRkxfMHrMBYuq5KXw9aMMhhRd6Z4lcLATSbXPHBo08tVf7xSffjBXvHB2pajfVStKVtSIJTVb5OVwhyiDIUUXGqsfydapcMxju10kLhfIS+IeUQVDiqZk/0E4Vj+SLXeC0U5M7RB1MKRoGuyeC8c6sXvgWP1QO0QdDCma8Fgnlu785oZQh9oh6mBI0ZO6WQ/H6sd4N4QTUXtEHQwpetBQ/Uq1ToNj9UPtEXUwpOhBQ/Ur2TIFjtUPtUfUwZCiJXVzExyqX0NvwYGx+qF2iToYUrSgkfqV7rwbDtWXS7fLy+NOUQVDihY0VL/S7QV4rH5cukNeHneKKhhSdCT79sGh+mVyQ5honiIr4F5RBUOKjsHu+XCofiUv698QJpqnygq4V1TBkKIDjTQI7/dgOFY/Wvi3HGQZGqlf6esGN4Se1rmyAu4VVTCkaEj3VsCh+pXuMLgh9FytkDVwt6iCIUUDGmkQqbbpeKh+XVsva+BuUQVDigY00iCSl7+Lh+rTQFeDrIG7RRUMKf9SN+rgSIMwuiGU1E4ugCHlHxpoINeL4EiDUDu5AIaUf3CkAaQ7CuFIg1A7uQCGlF/Jvt1wpEEY3xBKai8XwJDya7B7HhxpEKY3hB61lwtgSPmFBhpUovkOOFLfHPzDJA8MKb/QQAPp0v9Q7C0t02UV3C/KYEj5k7qxAY80gPQ18xvCxJViWQd3jDIYUv4Mds+CIw0idXUGHmkQbYtlHdwxymBI+YMGGlTyStBTkoCOtbIO7hhlMKT8QQMNKml6QygNXN8u6+COUQZDyo90byUcaCA2bggltZsrYEj5AQcaUObYXFNqN1fAkPIDDTQoKzeEktrNFTCk3Ev0H4YDDcrKDaGDxxdkwJByT/cgc1WyWe/Y3BFapslKuGfUwZByD40zMEs3hInWObIS7hl1MKTcgwMNyOTY3BHaV8lKuGfUwZByK9n3IBxoUCbH5mZz9T1oDwwptwZ7zA6TyTA6JSmL2s8lMKTcQuPUofs9Kiq1n0tgSLmFxqkDjVOH2s8lMKTcSd28D44zKKNjc7M5/B60B4aUO4Pds+FAg7J1Q+jqH/ZnwJByB41Th60bQhfPs8sGQ8odNE4dJt+jMoLD70F7YEi5kbpRBcepw/SUpIyB6ztkNdzXBTCk3EDD1GF8bG4WtaNrYEi5gcapw/jY3CxqR9fAkMKX6G+E49Rh45SkDLWna2BI4Uv3mB1mns3oe1SyOf4etAeGFD40TF22bghdfw/aA0MKHxqmjrSFY3Nvcfw9aA8MKVzJvr1wnDps3hAm2itlPdzZFTCkcA32LITj1GHzhnCga5eshzu7AoYULjRMXTaOzc1Qe7oIhhQuNExd3rG3aJw61J4ugiGFJ3VzKxymFps3hJLa1UUwpPAMds/F49Rg5djcjBi8B+2BIYUHDVOXrVOShrTMkPVwZ5fAkMKDhqkrecXeDWGidZ6shzu7BIYUjmRfAxymLuPvUcnWsVpWxL1dAkMKx2DPAjhMLbZOSRo20LVbVsS9XQJDCgccpiarN4SS2tVVMKRwoGHqsnpDKKldXQVDsi/Z/zAcpi4rx+ZmUfu6CoZkX7pnKRymLivH5mZculNWxL1dA0OyD41Sm+UbwsTlIlkR93YNDMk+OExNtr5H5Zary2VF3Ns1MCS7Ev3H4TB1WTslaZjrRxdkgyHZle5dBYepK9nKG8KxwJDsQqM0YevY3Ay1r8tgSHahUeqzfEMoqX1dBkOyCw9Tj7XvUclonior4t4ugiHZk7pRC4epy/YNYRw+6Z0NhmQPGqUJa8fmZnRUy5q4u4tgSPagUZqwdmzusK+7H5E1cXcXwZDsQaM0kfjS0ilJw9S+roMh2WHr+1MyrH2PSha1s+tgSHYMds+Bw9SVbrd4SpInJh+MzQZDsgON0kSqzfINYUuBrIm7uwqGZAcapQlrx+ZmtJXJmri7q2BI5pJ9O+EoTVg7Njejc7Osivu7CoZkbrCnBI5Sl9Vjc4epneMAhmQOjdKE1WNzh6md4wCGZA6N0oTNY3Mz1M5xAEMyk+w7AEdpwuaxuUOa4/M5wmwwJDPpnjI4ShPWbwivFMuquL/LYEhm0CCNhHBDmGhfKavi/i6DIZmBozSQ7rB7SpJnoKtBVsX9XQZD0mfzCzUzeEPoHwxJX7p3BRylCes3hJLaOy5gSPrQIE1ZPTZ3mNo7LmBI+tAgjdg+JcnTMk1Wxf1dB0PSB0dpwPaxuUNaS2RV3N91MCQ9qRs1cJQmbB+bO6SjVtbFr8F1MCQ9aJCmbB+b6/m654isi1+D62BIetAgTSV5QxgIDEkPGqSRMG4IJbV3nMCQgkvdvB+P0oD1Y3M9l+6QdfFriAMYkp6GxpPih68+LX77QaP48vN6MdBp9kf+odwQXi6UVXH/OIAh6Vm8/kGRrWLDPrH98OPiBy89LS7++jHxtz/vEP/tKIXjRcK4IUy0LZVVcf84gCHpUQeNLKnbI+7ff0KcOnda/OK9JvH5n3aLr9rK8aBtfo/KsIHOLbIq7h8HMKTgTr90AQ7Yrw17jommM6fFT392Unz2yV7xn8vL4SBNqb3jBoYU3P7Hz8Gh6iqpekAUla0VVRtrRVPTWvH+O6Xi2mfmv1OrveMGhqSndtcxOE4dc1beJ6aXVI5SWLpGrKyrFUeOVot331giWj4pFANf4PEiaue4gSHpq9nZCAca1D0V34ODRmYuXCPKq9aJfQdrxIVXK8Q/fl8k/vcF+MhW8xRZEfeOCxiSmWUbD8CRBlFYWg3H69eMBatF6ep1YsdD68RrLy4Xf/+oWCRa58l6uHNcwJDMoZH6VVrbIGaAkZpYc/9eWQt3jRMYkrmms+fhWP1YsHY7HKWJo6dfkLVw1ziBIdlRt/s4HOxE5o5xQ2hC7RZXMCR70GAnUlzxfThKXd7v02qvuIIh2VP/8Ck42vEUltXAYeooWFQl9hx7WlbB/eIGhmQXGu3YGsR0+V9UNM4gZlXUiZPPvyIvjzvFFQzJroZjZ8BwsQXVO+BA/Zop/2U4cOKMvCzuEncwJPvQeJG5lfVwqH6UVW+Vl8LXnyxgSPZV1h+CA1YVL9sAxzoe7z3rQyfPysvga08mMCT7Gp99FQ5YdVfZOjjasXj/2/v1ty/KS+DrTjYwpHCgAau8t9jQcJGiJevk0+JrTVYwpHCgAWdbWL0TDheZv3KTfEp8nckMhhSOqu1H4ZAz5lVugeNVeX+4pD43fQOGFI5Dp16EQ86YtdzHDeGCSvHmL9+XT4evMdnBkMJx5JmfwCFn3L2kFo84y9b9J+RT4ecnDjqnjj77ChxyhveOBRpxRgl/b54QDCkcx868BofsWVQz/g3hjJLJ8wdGJmBI4Tjx/OtwzJ75q7fCIWcsq9spnwI/L30LhhSO48+N/V/o2fdugkPOeOu9D+VT4Oelb8GQwrH14FNwzJ6ipevhkD3F5evlw/Fz0kgwpHB4R4OhMXsKFq2FY/Y8+tSP5MPxc9JIMKRwoCF7StftgkPOUJ+HxgZDCgcas6dkzTY4ZA9/3QgGhmTfm+9+CMfsmb1iMxyzp6p+v3w4fk4aDYYUro8/elSce7lR1Dzwze/U95TXwTF7JuPHqEzAkMKTvLkz68jc2eLrrrWi5dOF4oOfl4tjjStE6apVIwatPp7GB0MKT7pncdagi0W6e/T3qHz1r9ni3Pm3xfaDT8iH4OchDIYUnuwxDw26E3yPytVl8kfx42l8MKTwqINOXZ05atADXfvkj+LH0/hgSOFRB51sHf09KupjyD8YUjiSfQ+NGPPQoMH3qKiPI/9gSOFI91aMHHRXsRzwyIPJky3T5I/ix9PEYEjhGDFmT+fdI8Y8pK1U/ih+PE0MhhQOddCpdnBD2LlD/ih+PE0MhhSOUYNumzZq0OpjKBgYErkKhkSugiGRq2BI5CoYErkKhq5Q3zVwnfr6KDgYuiDRvx+Owlm95fJl4ddK/sHQBenee/EwHJXs2yNfFn6t5B8MXYBG4TL19ZEeGLoAjcJl6usjPTB0ARqFy9TXR3pgGHXJvkfgKFzlfc5QfY2kB4ZRl+6thMNwlfdJcPU1kh4YRh0ahcvU10f6YEjkKhgSuQqGRK6CIZGrYEjkKhgSuQqGRK6CIZGbxG3/B+m0CxlR6+dAAAAAAElFTkSuQmCC</icon>
+    <properties>
+        <property key="inputAttribute" type="attribute" required="true"> 
+            <caption>Search attribute</caption>
+            <category>General</category>
+            <description>The attribute to use as search parameter</description>
+            <attributeTypes>
+                <attributeType name="String"/>
+            </attributeTypes>
+        </property>       
+
+        <property key="accuracy" type="enumeration" defaultValue="partially">
+            <caption>Accuracy</caption>
+            <category>General</category>
+            <description>How to match text based on the searchstring.</description>
+            <enumerationValues>
+                <enumerationValue key="partially">Partially</enumerationValue>
+                <enumerationValue key="exactly">Exactly</enumerationValue>
+                <enumerationValue key="complementary">Complementary</enumerationValue>
+            </enumerationValues>
+        </property>
+        
+        <property key="separateWordSearch" type="boolean" defaultValue="true">
+            <caption>Separate word search</caption>
+            <category>General</category>
+            <description>If true, searches each word in the search string individually.</description>
+        </property>        
+
+        <property key="caseSensitive" type="boolean" defaultValue="false">
+            <caption>Case sensitive</caption>
+            <category>General</category>
+            <description>If true, search is case sensitive.</description>
+        </property>        
+
+        <property key="diacritics" type="boolean" defaultValue="true">
+            <caption>Ignore diacritics</caption>
+            <category>General</category>
+            <description>If true, doner matches döner</description>
+        </property>
+
+        <property key="wildcards" type="enumeration" defaultValue="enabled">
+            <caption>Use wildcards</caption>
+            <category>General</category>
+            <description>Disabled: Disable wildcard usage
+Enabled: match non-space characters
+With spaces: match space and non-space characters
+? will match 0 or 1 character, * will match 0 or more characters.</description>
+            <enumerationValues>
+                <enumerationValue key="enabled">Enabled</enumerationValue>
+                <enumerationValue key="withSpaces">With Spaces</enumerationValue>
+                <enumerationValue key="disabled">Disabled</enumerationValue>
+            </enumerationValues>
+        </property>
+
+        <property key="color" type="enumeration" defaultValue="yellow">
+            <caption>Highlight color</caption>
+            <category>General</category>
+            <description>The color used to highlight matches</description>
+            <enumerationValues>
+                <enumerationValue key="yellow">Yellow</enumerationValue>
+                <enumerationValue key="red">Red</enumerationValue>
+                <enumerationValue key="blue">Blue</enumerationValue>
+                <enumerationValue key="aqua">Aqua</enumerationValue>
+                <enumerationValue key="fuchsia">Fuchsia</enumerationValue>
+                <enumerationValue key="other">Other</enumerationValue>
+            </enumerationValues>
+        </property>
+
+        <property key="customColor" type="string" defaultValue="" required="false">
+            <caption>Custom color</caption>
+            <category>General</category>
+            <description>If highlight color 'Other', use this CSS color.</description>
+        </property>
+
+        <property key="element" type="string" defaultValue="mark">
+            <caption>Inserted element</caption>
+            <category>Advanced</category>
+            <description>This tag is inserted around all hits. N.b.: choose something that does not affect the styling of your page.</description>
+        </property>
+
+        <property key="context" type="string" defaultValue="body" >
+            <caption>Search context</caption>
+            <category>Advanced</category>
+            <description>A css selector (jQuery) to select the html element where marking is applied.</description>
+        </property>
+
+
+    </properties>
+</widget>
