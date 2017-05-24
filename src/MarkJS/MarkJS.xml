@@ -86,8 +86,19 @@ With spaces: match space and non-space characters
             <caption>Search context</caption>
             <category>Advanced</category>
             <description>A css selector (jQuery) to select the html element where marking is applied.</description>
+        </property>        
+
+        <property key="refresh" type="boolean" defaultValue="false" >
+            <caption>Refresh marks</caption>
+            <category>Advanced</category>
+            <description>When your page is dynamic (e.g. conditional visibility), you might want to test the page for matches periodically.</description>
         </property>
 
+        <property key="refreshInterval" type="integer" defaultValue="0" >
+            <caption>Refresh Interval</caption>
+            <category>Advanced</category>
+            <description>The interval to refresh matches on, in seconds.</description>
+        </property>
 
     </properties>
 </widget>

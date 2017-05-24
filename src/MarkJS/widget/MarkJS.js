@@ -30,6 +30,8 @@ define([
         wildcards: null,            // enum ('enabled')
         color: null,                // enum ('yellow')
         customColor: null,          // string ('')
+        refresh: null,              // boolean (false)
+        refreshInterval: null,      // Integer (0)
 
         //Internal variables
         _contextObj: null,          // MxObject
@@ -78,6 +80,10 @@ define([
                 var input = this._contextObj.get(this.inputAttribute);
                 if(input.length){
                     $(this.context).mark(input, this._options);
+
+                    if(this.refresh)
+                        setTimeout(lang.hitch(this, this._updateMarks), this.refreshInterval * 1000);
+
                 }
             }
 
@@ -140,6 +146,9 @@ define([
 
             if(this.element == null || this.element === "")
                 validationMessage += "Inserted element must not be empty\r\n";
+
+            if(this.refresh == true && !this.refreshInterval)
+                validationMessage += "Refresh interval must be larger then 0.\r\n";
 
             return validationMessage;
         }

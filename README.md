@@ -33,12 +33,13 @@ Add the widget to a dataview and select the text attribute whose contents you wo
 
 ## Properties
 
-- Search attribute: The attribute to use as search parameter
+- Search attribute: The attribute to use as search parameter.
 - Accuracy: mark text that contains, equals or complements the search string.
 - Separate word search: mark words in the search string individually, or mark whole search.
-- Case sensitive: ignore case when marking matches
-- Ignore diacritics: ignore diacritics when marking matches
-- Use wildcards: Enable or disable wildcards
+- Case sensitive: ignore case when marking matches.
+- Ignore diacritics: ignore diacritics when marking matches.
+- Use wildcards: Enable or disable wildcards.
 - Highlight color: The color used to highlight matches, choose from predefined options or use a custom color.
-- Inserted element: control the tag that is inserted to highlight matches
-- Search context: control the scope of where to mark text
+- Inserted element: control the tag that is inserted to highlight matches.
+- Search context: control the scope of where to mark text.
+- Refresh: Periodically refresh the matches your page.
