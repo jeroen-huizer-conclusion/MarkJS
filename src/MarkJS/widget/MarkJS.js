@@ -33,10 +33,19 @@ define([
         refresh: null,              // boolean (false)
         refreshInterval: null,      // Integer (0)
 
+        showToggleButton: null,     // boolean (false)
+        offCaption: null,           // boolean ("Disable")
+        onCaption: null,            // boolean ("Disable")
+        offIcon: null,              // boolean ("erase")
+        onIcon: null,               // boolean ("pencil")
+
+
         //Internal variables
         _contextObj: null,          // MxObject
         _markInstance: null,        // Instance of MarkJS
         _options: {},               // Object
+        _button: null,              // mxui.widget.Button
+        _isActive: true,         // boolean
 
         postCreate: function () {
             logger.debug(this.id + ".postCreate"); 
@@ -46,6 +55,11 @@ define([
                 logger.error(msg);
 
             this._options = this._getOptions();
+
+            if(this.showToggleButton){
+                this._updateButton();
+            }
+            
         },
 
 
@@ -76,17 +90,29 @@ define([
             $(this.context).unmark();
 
             // set new marks
-            if (this._contextObj) {
+            if (this._contextObj && this._isActive) {
                 var input = this._contextObj.get(this.inputAttribute);
                 if(input.length){
                     $(this.context).mark(input, this._options);
 
                     if(this.refresh)
                         setTimeout(lang.hitch(this, this._updateMarks), this.refreshInterval * 1000);
-
                 }
             }
 
+        },
+
+        _toggleActive: function(){
+            if(this._isActive){
+                this._isActive = false;
+                if(!this.refresh)
+                    this._updateMarks();
+            } 
+
+            else{
+                this._isActive = true;
+                this._updateMarks();
+            }
         },
 
         _formatMarks: function(){
@@ -103,6 +129,31 @@ define([
                      "diacritics": this.diacritics,
                      "wildcards": this.wildcards,
                      "done": lang.hitch(this, this._formatMarks)}
+        },
+
+        _updateButton: function(){
+
+            if(!this._button){
+
+                function hitched(){
+                    this._toggleActive();
+                    this._updateButton();
+                }
+
+                this._button = this._button = new mxui.widget.Button({onClick: lang.hitch(this, hitched)});
+                this._button.placeAt(this);
+            }
+
+            if(this._isActive){
+                this._button.set('caption', this.offCaption);
+                this._button.set('iconClass', this.offIcon != '' ? 'glyphicon-'+this.offIcon : '');
+                this._button.set('class', 'btn-'+this.offClass);
+            } else{
+                this._button.set('caption', this.onCaption);
+                this._button.set('iconClass', this.onIcon != '' ? 'glyphicon-'+this.onIcon : '');
+                this._button.set('class', 'btn-'+this.onClass);
+            }         
+           
         },
 
         _resetSubscriptions: function () {
@@ -149,6 +200,13 @@ define([
 
             if(this.refresh == true && !this.refreshInterval)
                 validationMessage += "Refresh interval must be larger then 0.\r\n";
+
+            if(this.showToggleButton){
+                if(this.onCaption == null || this.onCaption === '')
+                    validationMessage += "When button is enabled, it requires valid captions.\r\n";
+                if(this.offCaption == null || this.offCaption === '')
+                    validationMessage += "When button is enabled, it requires valid captions.\r\n";
+            }
 
             return validationMessage;
         }

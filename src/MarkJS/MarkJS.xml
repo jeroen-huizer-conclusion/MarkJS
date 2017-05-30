@@ -76,6 +76,8 @@ With spaces: match space and non-space characters
             <description>If highlight color 'Other', use this CSS color.</description>
         </property>
 
+        <!-- ADVANCED -->
+
         <property key="element" type="string" defaultValue="mark">
             <caption>Inserted element</caption>
             <category>Advanced</category>
@@ -99,6 +101,73 @@ With spaces: match space and non-space characters
             <category>Advanced</category>
             <description>The interval to refresh matches on, in seconds.</description>
         </property>
+
+        <!-- BUTTON -->
+
+        <property key="showToggleButton" type="boolean" defaultValue="false" required="true">
+            <caption>Show toggle button</caption>
+            <category>Button</category>
+            <description>When true, a button is added that allows you to toggle markings
+
+Note, this will only work for this instance of the widget, the setting is lost when navigating away or refreshing.</description>
+        </property>
+
+        <property key="offCaption" type="string" defaultValue="Enable" >
+            <caption>Caption (enabled)</caption>
+            <category>Button</category>
+            <description>This caption is shown when the markings are currently enabled.</description>
+        </property>
+
+        <property key="onCaption" type="string" defaultValue="Disable" >
+            <caption>Caption (disabled)</caption>
+            <category>Button</category>
+            <description>This caption is shown when the markings are currently disabled.</description>
+        </property>
+
+        <property key="offIcon" type="string" defaultValue="pencil" >
+            <caption>Icon (enabled)</caption>
+            <category>Button</category>
+            <description>This caption is shown when the markings are currently enabled.</description>
+        </property>
+
+        <property key="onIcon" type="string" defaultValue="erase" >
+            <caption>Icon (disabled)</caption>
+            <category>Button</category>
+            <description>This caption is shown when the markings are currently disabled.
+
+Use glyphicon names (e.g. pencil and not glyphicon-pencil).</description>
+        </property>
+
+        <property key="onClass" type="enumeration" defaultValue="default">
+            <caption>Button class (disabled)</caption>
+            <category>Button</category>
+            <description>Class of the button when the markings are currently disable. </description>
+            <enumerationValues>
+                <enumerationValue key="default">Default</enumerationValue>
+                <enumerationValue key="inverse">Inverse</enumerationValue>
+                <enumerationValue key="primary">Primary</enumerationValue>
+                <enumerationValue key="info">Info</enumerationValue>
+                <enumerationValue key="success">Success</enumerationValue>
+                <enumerationValue key="warning">Warning</enumerationValue>
+                <enumerationValue key="danger">Danger</enumerationValue>
+            </enumerationValues>
+        </property>
+
+        <property key="offClass" type="enumeration" defaultValue="default">
+            <caption>Button class (enabled)</caption>
+            <category>Button</category>
+            <description>Class of the button when the markings are currently enabled. </description>
+            <enumerationValues>
+                <enumerationValue key="default">Default</enumerationValue>
+                <enumerationValue key="inverse">Inverse</enumerationValue>
+                <enumerationValue key="primary">Primary</enumerationValue>
+                <enumerationValue key="info">Info</enumerationValue>
+                <enumerationValue key="success">Success</enumerationValue>
+                <enumerationValue key="warning">Warning</enumerationValue>
+                <enumerationValue key="danger">Danger</enumerationValue>
+            </enumerationValues>
+        </property>
+
 
     </properties>
 </widget>

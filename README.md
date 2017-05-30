@@ -10,6 +10,7 @@ A simple tool to highlight occurences of text on a page, based on MarkJS.
 - Mark all occurences of a text attribute in a given scope
 - Highlight color configurable
 - Use wildcards in your search
+- Optionally, show a button to toggle the markings on/off
 
 ## Limitations
 - Navigating away from the page, without closing it will leave the highlights intact.
@@ -43,3 +44,6 @@ Add the widget to a dataview and select the text attribute whose contents you wo
 - Inserted element: control the tag that is inserted to highlight matches.
 - Search context: control the scope of where to mark text.
 - Refresh: Periodically refresh the matches your page.
+- Show Toggle Button: Show a button to toggle the markings on / off.
+- Caption: add a caption for the toggle button, for both an enabled / disabled states. 
+- Icon: add a glyphicon class name as icon, for both enabled / disabled states.
