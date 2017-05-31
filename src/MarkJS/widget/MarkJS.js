@@ -96,7 +96,7 @@ define([
                     $(this.context).mark(input, this._options);
 
                     if(this.refresh)
-                        setTimeout(lang.hitch(this, this._updateMarks), this.refreshInterval * 1000);
+                        setTimeout(lang.hitch(this, this._updateMarks), Math.abs(this.refreshInterval));
                 }
             }
 
@@ -199,7 +199,7 @@ define([
                 validationMessage += "Inserted element must not be empty\r\n";
 
             if(this.refresh == true && !this.refreshInterval)
-                validationMessage += "Refresh interval must be larger then 0.\r\n";
+                validationMessage += "Refresh interval of 0 is not recommended.\r\n";
 
             if(this.showToggleButton){
                 if(this.onCaption == null || this.onCaption === '')

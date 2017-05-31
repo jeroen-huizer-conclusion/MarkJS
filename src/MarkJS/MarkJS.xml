@@ -81,7 +81,9 @@ With spaces: match space and non-space characters
         <property key="element" type="string" defaultValue="mark">
             <caption>Inserted element</caption>
             <category>Advanced</category>
-            <description>This tag is inserted around all hits. N.b.: choose something that does not affect the styling of your page.</description>
+            <description>This tag is inserted around all hits. 
+
+Note, it is advised not to use tags that might have existing styling applied (e.g. spans or divs).  Instead, use a tag that does not affect the styling of your page (e.g. mark, hit or match).</description>
         </property>
 
         <property key="context" type="string" defaultValue="body" >
@@ -96,10 +98,10 @@ With spaces: match space and non-space characters
             <description>When your page is dynamic (e.g. conditional visibility), you might want to test the page for matches periodically.</description>
         </property>
 
-        <property key="refreshInterval" type="integer" defaultValue="0" >
+        <property key="refreshInterval" type="integer" defaultValue="500" >
             <caption>Refresh Interval</caption>
             <category>Advanced</category>
-            <description>The interval to refresh matches on, in seconds.</description>
+            <description>The interval to refresh matches on, in milliseconds (0 is not recommended due to considerable overhead).</description>
         </property>
 
         <!-- BUTTON -->
@@ -124,33 +126,18 @@ Note, this will only work for this instance of the widget, the setting is lost w
             <description>This caption is shown when the markings are currently disabled.</description>
         </property>
 
-        <property key="offIcon" type="string" defaultValue="pencil" >
+        <property key="offIcon" type="string" defaultValue="pencil">
             <caption>Icon (enabled)</caption>
             <category>Button</category>
             <description>This caption is shown when the markings are currently enabled.</description>
         </property>
 
-        <property key="onIcon" type="string" defaultValue="erase" >
+        <property key="onIcon" type="string" defaultValue="erase">
             <caption>Icon (disabled)</caption>
             <category>Button</category>
             <description>This caption is shown when the markings are currently disabled.
 
 Use glyphicon names (e.g. pencil and not glyphicon-pencil).</description>
-        </property>
-
-        <property key="onClass" type="enumeration" defaultValue="default">
-            <caption>Button class (disabled)</caption>
-            <category>Button</category>
-            <description>Class of the button when the markings are currently disable. </description>
-            <enumerationValues>
-                <enumerationValue key="default">Default</enumerationValue>
-                <enumerationValue key="inverse">Inverse</enumerationValue>
-                <enumerationValue key="primary">Primary</enumerationValue>
-                <enumerationValue key="info">Info</enumerationValue>
-                <enumerationValue key="success">Success</enumerationValue>
-                <enumerationValue key="warning">Warning</enumerationValue>
-                <enumerationValue key="danger">Danger</enumerationValue>
-            </enumerationValues>
         </property>
 
         <property key="offClass" type="enumeration" defaultValue="default">
@@ -168,6 +155,20 @@ Use glyphicon names (e.g. pencil and not glyphicon-pencil).</description>
             </enumerationValues>
         </property>
 
+        <property key="onClass" type="enumeration" defaultValue="default">
+            <caption>Button class (disabled)</caption>
+            <category>Button</category>
+            <description>Class of the button when the markings are currently disabled. </description>
+            <enumerationValues>
+                <enumerationValue key="default">Default</enumerationValue>
+                <enumerationValue key="inverse">Inverse</enumerationValue>
+                <enumerationValue key="primary">Primary</enumerationValue>
+                <enumerationValue key="info">Info</enumerationValue>
+                <enumerationValue key="success">Success</enumerationValue>
+                <enumerationValue key="warning">Warning</enumerationValue>
+                <enumerationValue key="danger">Danger</enumerationValue>
+            </enumerationValues>
+        </property>
 
     </properties>
 </widget>
