@@ -15,12 +15,12 @@ A simple tool to highlight occurences of text on a page, based on MarkJS.
 ## Limitations
 - Navigating away from the page, without closing it will leave the highlights intact.
 - Does not (yet) include searching based on regex. 
+- Does not work in IE < 9
 
 ## Dependencies
 
 - [Mendix 6.x Environment](https://appstore.mendix.com/).
-- [jQuery](http://jquery.com/download/) (unminified, added to the package)
-- [mark.js](https://www.markjs.io) (jquery plugin version, added to the package)
+- [mark.js](https://www.markjs.io) (standalone, uncompressed version, added to the package)
 
 ## Configuration
 
