@@ -17,15 +17,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 (function (factory, window, document) {
     if (typeof define === "function" && define.amd) {
-        define(["MarkJS/lib/jquery"], function (jQuery) {
-            return factory(window, document, jQuery);
+        define([], function () {
+            return factory(window, document);
         });
     } else if ((typeof module === "undefined" ? "undefined" : _typeof(module)) === "object" && module.exports) {
-        module.exports = factory(window, document, require("jquery"));
+        module.exports = factory(window, document);
     } else {
-        factory(window, document, jQuery);
+        factory(window, document);
     }
-})(function (window, document, $) {
+})(function (window, document) {
     var Mark = function () {
         function Mark(ctx) {
             _classCallCheck(this, Mark);
@@ -862,17 +862,24 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return DOMIterator;
     }();
 
-    $.fn.mark = function (sv, opt) {
-        new Mark(this.get()).mark(sv, opt);
+    window.Mark = function (ctx) {
+        var _this16 = this;
+
+        var instance = new Mark(ctx);
+        this.mark = function (sv, opt) {
+            instance.mark(sv, opt);
+            return _this16;
+        };
+        this.markRegExp = function (sv, opt) {
+            instance.markRegExp(sv, opt);
+            return _this16;
+        };
+        this.unmark = function (opt) {
+            instance.unmark(opt);
+            return _this16;
+        };
         return this;
     };
-    $.fn.markRegExp = function (regexp, opt) {
-        new Mark(this.get()).markRegExp(regexp, opt);
-        return this;
-    };
-    $.fn.unmark = function (opt) {
-        new Mark(this.get()).unmark(opt);
-        return this;
-    };
-    return $;
+
+    return window.Mark;
 }, window, document);

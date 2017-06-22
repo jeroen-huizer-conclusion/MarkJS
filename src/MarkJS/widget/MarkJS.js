@@ -5,16 +5,12 @@ define([
     "mxui/dom",
     "dojo/_base/lang",
 
-    "MarkJS/lib/jquery",
-    "MarkJS/lib/jquery.mark"
+    "MarkJS/lib/mark"
    
 ], function (declare, _WidgetBase,
-    dom, lang,
-    jquery, markjs
+    dom, lang, markjs
 ) {
     "use strict";
-
-    var $ = jQuery.noConflict(true);
 
     // Declare widget"s prototype.
     return declare("MarkJS.widget.MarkJS", [_WidgetBase], {
@@ -55,6 +51,7 @@ define([
                 logger.error(msg);
 
             this._options = this._getOptions();
+            this._instance = new markjs(this.domNode);
 
             if(this.showToggleButton){
                 this._updateButton();
@@ -87,13 +84,16 @@ define([
         _updateMarks: function(){
             // clean all current marks
 
-            $(this.context).unmark();
+            this._instance.unmark();
 
             // set new marks
             if (this._contextObj && this._isActive) {
                 var input = this._contextObj.get(this.inputAttribute);
                 if(input.length){
-                    $(this.context).mark(input, this._options);
+
+                    // Should I 'destroy' the old instance maybe?     
+                    this._instance = new markjs(this._getMarkContext()) // Presumes a document
+                    this._instance.mark(input, this._options);
 
                     if(this.refresh)
                         setTimeout(lang.hitch(this, this._updateMarks), Math.abs(this.refreshInterval));
@@ -117,8 +117,13 @@ define([
 
         _formatMarks: function(){
             var color = this.color === "other" ? this.customColor : this.color;
-            //Note: 
-            $(this.element).css({"background-color": color, "padding": "0px", "margin" : "0px"});
+            
+            // forEach does not work in IE < 9
+            this._getMarkContext().forEach(function(marked){
+                marked.style.backgroundColor = color;
+                marked.style.padding = "0px";
+                marked.style.margin = "0px";
+            });
         },
 
         _getOptions: function(){
@@ -129,6 +134,10 @@ define([
                      "diacritics": this.diacritics,
                      "wildcards": this.wildcards,
                      "done": lang.hitch(this, this._formatMarks)}
+        },
+
+        _getMarkContext: function(){
+            return document.querySelectorAll(this.context);
         },
 
         _updateButton: function(){
