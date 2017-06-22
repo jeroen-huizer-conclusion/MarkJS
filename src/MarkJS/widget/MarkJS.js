@@ -119,7 +119,7 @@ define([
             var color = this.color === "other" ? this.customColor : this.color;
             
             // forEach does not work in IE < 9
-            this._getMarkContext().forEach(function(marked){
+            this._getMarked().forEach(function(marked){
                 marked.style.backgroundColor = color;
                 marked.style.padding = "0px";
                 marked.style.margin = "0px";
@@ -139,6 +139,10 @@ define([
         _getMarkContext: function(){
             return document.querySelectorAll(this.context);
         },
+
+        _getMarked: function(){
+            return document.querySelectorAll(this.element);
+        }, 
 
         _updateButton: function(){
 
