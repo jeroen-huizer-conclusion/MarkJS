@@ -41,7 +41,8 @@ define([
         _markInstance: null,        // Instance of MarkJS
         _options: {},               // Object
         _button: null,              // mxui.widget.Button
-        _isActive: true,         // boolean
+        _isActive: true,            // boolean
+        _markColor: null,           // String (this.color || this.customColor)
 
         postCreate: function () {
             logger.debug(this.id + ".postCreate"); 
@@ -56,6 +57,8 @@ define([
             if(this.showToggleButton){
                 this._updateButton();
             }
+
+            this._markColor = this.color === "other" ? this.customColor : this.color;
             
         },
 
@@ -92,7 +95,7 @@ define([
                 if(input.length){
 
                     // Should I 'destroy' the old instance maybe?     
-                    this._instance = new markjs(this._getMarkContext()) // Presumes a document
+                    this._instance = new markjs(document.querySelectorAll(this.context));
                     this._instance.mark(input, this._options);
 
                     if(this.refresh)
@@ -115,15 +118,10 @@ define([
             }
         },
 
-        _formatMarks: function(){
-            var color = this.color === "other" ? this.customColor : this.color;
-            
-            // forEach does not work in IE < 9
-            this._getMarked().forEach(function(marked){
-                marked.style.backgroundColor = color;
-                marked.style.padding = "0px";
-                marked.style.margin = "0px";
-            });
+        _formatMark: function(mark){
+            mark.style.backgroundColor = this._markColor;
+            mark.style.padding = "0px";
+            mark.style.margin = "0px";
         },
 
         _getOptions: function(){
@@ -133,16 +131,15 @@ define([
                      "element": this.element,
                      "diacritics": this.diacritics,
                      "wildcards": this.wildcards,
-                     "done": lang.hitch(this, this._formatMarks)}
+                     "each": lang.hitch(this, this._formatMark),
+                     "filter": this._filter
+                 }
         },
 
-        _getMarkContext: function(){
-            return document.querySelectorAll(this.context);
+        _filter: function(node, match, total, cntr){
+            // This limits the amount of markings in the hope of keeping this thing performat in IE.
+            return cntr <25; 
         },
-
-        _getMarked: function(){
-            return document.querySelectorAll(this.element);
-        }, 
 
         _updateButton: function(){
 
